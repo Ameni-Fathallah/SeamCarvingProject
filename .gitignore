@@ -36,9 +36,7 @@ venv.bak/
 *.swo
 *~
 
-# Images de sortie (on ne versionne pas les résultats)
-images/output/
-!images/output/.gitkeep
+
 
 # Données numpy
 *.npy
