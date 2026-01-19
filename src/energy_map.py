@@ -17,9 +17,8 @@ class EnergyMap:
         if method == 'sobel':
             dx = cv2.Sobel(image, cv2.CV_32F, 1, 0, ksize=3)
             dy = cv2.Sobel(image, cv2.CV_32F, 0, 1, ksize=3)
-            
-        energy = np.sqrt(dx**2 + dy**2)# Gradient magnitude:it gives high values at edges
-    
+        
+        energy=np.abs(dx)+np.abs(dy)
         
         if Config.ENERGY_NORMALIZATION:# Normalize energy to [0, 255]
             if energy.max() - energy.min() > 0:
